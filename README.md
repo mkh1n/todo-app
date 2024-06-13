@@ -1,15 +1,9 @@
-# 🚀 Welcome to your new awesome project!
+# Todo app
 
-This project has been created using **webpack-cli**, you can now run
+A simple project for todo records made using js, html, CSS-Bootstrap, webpack
 
-```
-npm run build
-```
+Priority selection for each task, deletion and completion of tasks are supported.
 
-or
+The tasks are stored in your browser's localstorage
 
-```
-yarn build
-```
-
-to bundle your application
+<img src="./screenshot.png">

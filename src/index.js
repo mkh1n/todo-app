@@ -37,7 +37,8 @@ const schemas = {
 
 const view = render(state, elements)
 
-view.tasks = JSON.parse(localStorage.getItem("todos")) || [];
+view.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+view.completedTasks = JSON.parse(localStorage.getItem("completedTasks")) || [];
 
 elements.addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -48,6 +49,14 @@ elements.cancelForm.addEventListener('click', (e) => {
   view.addTaskForm.shown = false
 
 })
+const generateNewId = () => {
+  var id = _.uniqueId();
+  var existingId = view.tasks.map((task)=>task.id)
+  while (existingId.includes(id)){
+    id = _.uniqueId();
+  }
+  return id;
+}
 const addTask = () => {
   let formData = new FormData(elements.addTaskForm);
   elements.addTaskForm.reset()
@@ -55,9 +64,8 @@ const addTask = () => {
   const description = formData.get('description')
   const priority = formData.get('priority')
   const task = {
-    id: _.uniqueId(),
+    id: generateNewId(),
     name,
-    tags: [],
     description,
     priority
   }
@@ -115,11 +123,11 @@ const addOrRemove = (array, item) => {
 const deleteTask = (id) => {
   const updatedTasks = view.tasks.filter((task) => task.id !== id)
   view.tasks = updatedTasks
-  const completedDeletedTasks = view.completedTasks.filter(id => id !== id)
+  const completedDeletedTasks = view.completedTasks.filter((task_id)=> task_id !== id)
   view.completedTasks = completedDeletedTasks
 
-  localStorage.setItem("todos", JSON.stringify(view.tasks)); //Converts object to string and stores in local storage
-
+  localStorage.setItem("tasks", JSON.stringify(view.tasks)); //Converts object to string and stores in local storage
+  localStorage.setItem("completedTasks", JSON.stringify(view.completedTasks));
 }
 
 elements.tasks.addEventListener('click', (e) => {
@@ -131,6 +139,7 @@ elements.tasks.addEventListener('click', (e) => {
   const checkBox = taskEl.querySelector('input');
   checkBox.checked = !checkBox.checked;
   view.completedTasks = addOrRemove(view.completedTasks, taskEl.id)
+  localStorage.setItem("completedTasks", JSON.stringify(view.completedTasks));
 })
 
 elements.filterMenu.addEventListener('click', (e) => {

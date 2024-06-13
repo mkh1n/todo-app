@@ -39,7 +39,7 @@ const renderTasks = (state, elements) => {
       </a>
     </div>`
     taskContaier.prepend(taskEl);
-    localStorage.setItem("todos", JSON.stringify(state.tasks)); //Converts object to string and stores in local storage
+    localStorage.setItem("tasks", JSON.stringify(state.tasks)); //Converts object to string and stores in local storage
 
   })
 }

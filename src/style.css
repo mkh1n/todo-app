@@ -1,7 +1,8 @@
 .nav-link, .nav-item,.nav-link:focus{
+  padding: 5px 10px;
   color: #6a6a6a;
-  padding-left: 8px;
   transition: 0.2s;
+  cursor: pointer;
 }
 .list-group-item{
 
@@ -15,14 +16,12 @@
   color:#da2222 !important;
 }
 ul li ul li{
-  padding-left: 9px !important;
   position: relative;
 }
 .nav {
   display:table;
   width:100%;
   margin: 0;
-  padding-right: 0;
 }
 .navbar-nav > li {
   float:none;
@@ -31,6 +30,7 @@ ul li ul li{
 }
 #addTaskBtn{
   padding: 0 !important;
+  cursor: pointer;
 }
 #addTaskForm{
   width: 100%;
@@ -123,11 +123,10 @@ ul li ul li{
 .nav-holder{
   padding-right:0 !important ;
 }
+.filterOption{
+  cursor: pointer;
+}
 .filter-count-all, .filter-count-completed, .filter-count-uncompleted {
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(-250%, 33%);
-  border-radius: 0.25em;
+  margin-left: 4px;
   color:#6a6a6a !important
 }

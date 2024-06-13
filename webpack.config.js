@@ -3,10 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js', // Точка входа для сборки проекта
-  watch: true,
   output: {
     filename: 'bundle.js', // Имя выходного файла сборки
-    path: path.resolve(__dirname, 'dist'), // Путь для выходного файла сборки
+    path: path.resolve(__dirname, 'build'), // Путь для выходного файла сборки
     clean: true
   },
   watchOptions: {
@@ -30,7 +29,7 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'), // Каталог для статики
+      directory: path.join(__dirname, 'build'), // Каталог для статики
     },
     open: true, // Автоматически открывать браузер
   },
