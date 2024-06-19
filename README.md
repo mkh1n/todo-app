@@ -1,11 +1,20 @@
-# Todo app
+# Todo App
 
-A simple project for todo records made using js, html, CSS-Bootstrap, webpack
+A simple Single Page Application (SPA) for managing your tasks, implemented using JavaScript, HTML, CSS-Bootstrap, and Webpack.
 
-Priority selection for each task, deletion and completion of tasks are supported.
+## Features
 
-You can filter your tasks.
+- **Priority Selection**: Assign priorities to each task.
+- **Task Management**: Add, delete, and mark tasks as complete.
+- **Task Filtering**: Filter tasks based on their status and priority.
+- **Persistent Storage**: Tasks are stored in your browser's local storage, ensuring they persist across sessions.
 
-The tasks are stored in your browser's localstorage
+## Screenshot
 
-<img src="./screenshot.png">
+![Todo App Screenshot](./screenshot.png)
+![Todo App Screenshot](./screenshot1.png)
+
+## Usage
+
+You can access the live application directly on GitHub Pages: Todo App
+
