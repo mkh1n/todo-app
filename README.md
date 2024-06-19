@@ -18,3 +18,8 @@ A simple Single Page Application (SPA) for managing your tasks, implemented usin
 
 You can access the live application directly on GitHub Pages: <a href="https://mkh1n.github.io/todo-app/">Todo App</a>
 
+## About
+
+This is a test task completed according to [this technical task](https://drive.google.com/file/u/0/d/17i3HWkCW8OdvmczEcE2p3q-ljU-2sAWz/view).
+
+
